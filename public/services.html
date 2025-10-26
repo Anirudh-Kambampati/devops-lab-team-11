@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Packages</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #0a0e27, #1a0b2e);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px 30px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+  }
+
+  .packages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 20px 50px;
+    flex: 1;
+  }
+
+  .package-card {
+    background: rgba(30, 20, 50, 0.8);
+    border: 1px solid rgba(142, 36, 170, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(142, 36, 170, 0.2);
+    width: 320px;
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(142, 36, 170, 0.4);
+    border-color: rgba(142, 36, 170, 0.6);
+  }
+
+  .package-card h2 {
+    font-size: 1.8rem;
+    color: #ce93d8;
+    margin-bottom: 10px;
+  }
+
+  .package-card p {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #64b5f6;
+    margin-bottom: 20px;
+  }
+
+  .features {
+    text-align: left;
+    margin: 0 auto 25px;
+    max-width: 240px;
+  }
+
+  .features li {
+    margin: 8px 0;
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    color: #c0c0c0;
+  }
+
+  .features li::before {
+    content: "✔";
+    color: #66bb6a;
+    position: absolute;
+    left: 0;
+  }
+
+  button {
+    background: linear-gradient(135deg, #1e88e5, #8e24aa);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(142, 36, 170, 0.5);
+  }
+
+  footer {
+    background: linear-gradient(135deg, #8e24aa, #1e88e5);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.95rem;
+    margin-top: auto;
+  }
+
+  footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .packages-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Choose Your Perfect Event Package</h1>
+  <p>Flexible plans for every celebration, from simple gatherings to luxury events</p>
+</header>
+
+<div class="packages-container">
+
+  <div class="package-card">
+    <h2>Basic</h2>
+    <p>Ideal for small gatherings or casual events</p>
+    <div class="price">₹4,999</div>
+    <ul class="features">
+      <li>Basic decoration</li>
+      <li>2 hours photography</li>
+      <li>Snacks & beverages</li>
+      <li>Event coordinator</li>
+    </ul>
+    <button>Select Plan</button>
+  </div>
+
+  <div class="package-card">
+    <h2>Premium</h2>
+    <p>Perfect for medium-sized parties or celebrations</p>
+    <div class="price">₹9,999</div>
+    <ul class="features">
+      <li>Themed decoration</li>
+      <li>4 hours photography</li>
+      <li>Full catering service</li>
+      <li>Custom invitations</li>
+    </ul>
+    <button>Select Plan</button>
+  </div>
+
+  <div class="package-card">
+    <h2>Luxury</h2>
+    <p>For grand events that deserve the finest experience</p>
+    <div class="price">₹19,999</div>
+    <ul class="features">
+      <li>Premium venue setup</li>
+      <li>Full-day photography & videography</li>
+      <li>Customized menu</li>
+      <li>Entertainment & live music</li>
+      <li>Dedicated event manager</li>
+    </ul>
+    <button>Select Plan</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Eventify | All Rights Reserved</p>
+  <p>
+    <a href="#">Instagram</a> •
+    <a href="#">Facebook</a> •
+    <a href="#">Contact Us</a>
+  </p>
+</footer>
+
+</body>
+</html>
