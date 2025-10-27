@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoroa - Premium Event Management</title>
+    <title>Contact Us - Eventify</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #0f0f0f 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 40%, #2d1b4e 100%);
             min-height: 100vh;
             color: #fff;
             position: relative;
             overflow-x: hidden;
         }
+
         body::before {
             content: '';
             position: fixed;
@@ -25,10 +27,11 @@
             right: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(192,192,192,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
             animation: float 20s ease-in-out infinite;
             z-index: 0;
         }
+
         body::after {
             content: '';
             position: fixed;
@@ -36,35 +39,39 @@
             left: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, transparent 70%);
             animation: float 25s ease-in-out infinite reverse;
             z-index: 0;
         }
+
         @keyframes float {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(-100px, 100px); }
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 2rem 5%;
-            background: rgba(26, 26, 26, 0.7);
+            background: rgba(10, 14, 39, 0.7);
             backdrop-filter: blur(20px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
         }
+
         .logo {
             font-size: 2rem;
             font-weight: bold;
             letter-spacing: 2px;
-            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -72,17 +79,20 @@
             position: relative;
             z-index: 1;
         }
+
         .nav-links a {
-            color: #e0e0e0;
+            color: #e0e7ff;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
+
         .nav-links a:hover {
-            color: #ffffff;
+            color: #a78bfa;
         }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -90,97 +100,70 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ffffff, #c0c0c0);
+            background: linear-gradient(90deg, #a78bfa, #ec4899);
             transition: width 0.3s ease;
         }
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        .hero {
+
+        .contact-hero {
             text-align: center;
-            padding: 8rem 5% 6rem;
-            max-width: 1200px;
+            padding: 5rem 5% 3rem;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-        .hero h1 {
-            font-size: 5rem;
+
+        .contact-hero h1 {
+            font-size: 4.5rem;
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease;
-            line-height: 1.2;
             background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 30%, #f0abfc 70%, #fda4af 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .hero p {
+
+        .contact-hero p {
             font-size: 1.4rem;
-            margin-bottom: 3rem;
+            color: #c7d2fe;
             opacity: 0.9;
             animation: fadeInUp 1s ease 0.2s backwards;
-            color: #c7d2fe;
+            line-height: 1.6;
         }
-        .cta-button {
-            background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
-            color: #fff;
-            padding: 1.2rem 3rem;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s backwards;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
-        }
-        .features {
+
+        .contact-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
-            padding: 4rem 5%;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 4rem auto;
+            padding: 0 5%;
             position: relative;
             z-index: 1;
         }
-        .feature-card {
-            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(236,72,153,0.15) 100%);
             backdrop-filter: blur(10px);
-            padding: 3rem 2rem;
+            padding: 3rem 2.5rem;
             border-radius: 20px;
-            transition: all 0.4s ease;
             border: 1px solid rgba(167, 139, 250, 0.3);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease backwards;
             position: relative;
             overflow: hidden;
-            height: 100%;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
         }
-        .feature-card::before {
+
+        .info-card:nth-child(1) { animation-delay: 0.3s; }
+        .info-card:nth-child(2) { animation-delay: 0.4s; }
+        .info-card:nth-child(3) { animation-delay: 0.5s; }
+        .info-card:nth-child(4) { animation-delay: 0.6s; }
+
+        .info-card::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -191,266 +174,77 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        .feature-card:hover::before {
+
+        .info-card:hover::before {
             opacity: 1;
         }
-        .feature-card:hover {
+
+        .info-card:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: #ec4899;
             box-shadow: 0 20px 50px rgba(236, 72, 153, 0.3);
         }
-        /* Wedding Card with Background Image */
-        .feature-card.wedding-card {
-            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
-            background-size: cover;
-            background-position: center;
-            transition: all 0.4s ease;
-        }
-        .feature-card.wedding-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(139,92,246,0.7) 0%, rgba(236,72,153,0.7) 100%), url('https://images.squarespace-cdn.com/content/v1/62cfd0c302e82f5971feafbd/1708432869077-PWIW1V0M6Z759HPOT89M/marquee-wedding-english-countryside.jpg?format=1000w');
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
-        .feature-card.wedding-card:hover::after {
-            opacity: 1;
-        }
-        .feature-card.wedding-card > * {
-            position: relative;
-            z-index: 2;
-        }
-        .feature-card.wedding-card h3,
-        .feature-card.wedding-card p {
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .feature-icon {
+
+        .info-card-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             filter: drop-shadow(0 0 20px rgba(167,139,250,0.5));
         }
-        .feature-card.wedding-card .feature-icon {
-            filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
-        }
-        .feature-card h3 {
+
+        .info-card h3 {
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .feature-card.wedding-card h3 {
-            color: #fff;
-            background: none;
-            -webkit-text-fill-color: unset;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        /* Corporate Card with Background Image */
-        .feature-card.corporate-card {
-            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
-            transition: all 0.4s ease;
-        }
-        .feature-card.corporate-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(60,60,60,0.7) 0%, rgba(40,40,40,0.7) 100%), url('https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .feature-card.corporate-card:hover::after {
-            opacity: 1;
-        }
-        .feature-card.corporate-card h3 {
-            color: #fff;
-            background: none;
-            -webkit-text-fill-color: unset;
-            transition: text-shadow 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-        .feature-card.corporate-card:hover h3 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        .feature-card.corporate-card p {
-            position: relative;
-            z-index: 2;
-            transition: color 0.4s ease;
-        }
-        .feature-card.corporate-card:hover p {
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .feature-card.corporate-card .feature-icon {
-            position: relative;
-            z-index: 2;
-        }
-        /* Social Events Card with Background Image */
-        .feature-card.social-card {
-            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
-            transition: all 0.4s ease;
-        }
-        .feature-card.social-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(60,60,60,0.7) 0%, rgba(40,40,40,0.7) 100%), url('https://images.pexels.com/photos/9816/pexels-photo-9816.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .feature-card.social-card:hover::after {
-            opacity: 1;
-        }
-        .feature-card.social-card h3 {
-            color: #fff;
-            background: none;
-            -webkit-text-fill-color: unset;
-            transition: text-shadow 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-        .feature-card.social-card:hover h3 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        .feature-card.social-card p {
-            position: relative;
-            z-index: 2;
-            transition: color 0.4s ease;
-        }
-        .feature-card.social-card:hover p {
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .feature-card.social-card .feature-icon {
-            position: relative;
-            z-index: 2;
-        }
-        /* Parties Card with Background Image */
-        .feature-card.parties-card {
-            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(236,72,153,0.1) 100%);
-            transition: all 0.4s ease;
-        }
-        .feature-card.parties-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(60,60,60,0.7) 0%, rgba(40,40,40,0.7) 100%), url('https://www.shutterstock.com/image-photo/black-white-photo-festival-crowd-600nw-475397740.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .feature-card.parties-card:hover::after {
-            opacity: 1;
-        }
-        .feature-card.parties-card h3 {
-            color: #fff;
-            background: none;
-            -webkit-text-fill-color: unset;
-            transition: text-shadow 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-        .feature-card.parties-card:hover h3 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        .feature-card.parties-card p {
-            position: relative;
-            z-index: 2;
-            transition: color 0.4s ease;
-        }
-        .feature-card.parties-card:hover p {
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .feature-card.parties-card .feature-icon {
-            position: relative;
-            z-index: 2;
-        }
-        .feature-card p {
-            font-size: 1.05rem;
-            line-height: 1.6;
+
+        .info-card p {
             color: #c7d2fe;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+
+        .info-card a {
+            color: #a78bfa;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        .stat-item {
-            position: relative;
-            padding: 2rem;
-            border-radius: 15px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(192,192,192,0.08) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(192, 192, 192, 0.3);
+
+        .info-card a:hover {
+            color: #ec4899;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            font-size: 2.2rem;
             transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(167,139,250,0.3));
+            cursor: pointer;
         }
-        .stat-item:hover {
-            transform: scale(1.05);
-            border-color: #ffffff;
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+
+        .social-icon:hover {
+            transform: scale(1.3) translateY(-5px);
+            filter: drop-shadow(0 0 20px rgba(236,72,153,0.6));
         }
-        .stat-item h2 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .stat-item p {
-            font-size: 1.2rem;
-            color: #d0d0d0;
-        }
+
         footer {
             text-align: center;
             padding: 3rem 5%;
-            background: rgba(26, 26, 26, 0.7);
-            margin-top: 4rem;
-            border-top: 1px solid rgba(192, 192, 192, 0.2);
+            background: rgba(10, 14, 39, 0.7);
+            margin-top: 5rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
             position: relative;
             z-index: 1;
-            color: #d0d0d0;
+            color: #c7d2fe;
         }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -461,76 +255,95 @@
                 transform: translateY(0);
             }
         }
+
         @media (max-width: 768px) {
-            .hero h1 {
+            .contact-hero h1 {
                 font-size: 3rem;
             }
+
             .nav-links {
                 gap: 1.5rem;
+                font-size: 0.9rem;
             }
-            .features {
+
+            .contact-container {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .info-card {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo">MEMOROA</div>
+        <div class="logo">EVENTIFY</div>
         <ul class="nav-links">
-            <li><a href="homepage.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contactpage.html">Contact Us</a></li>
         </ul>
     </nav>
-    <section class="hero">
-        <h1>Creating Unforgettable Experiences</h1>
-        <p>From corporate gatherings to dream weddings, we bring your vision to life with flawless execution and creative excellence.</p>
-        <button class="cta-button">Plan Your Event</button>
+
+    <section class="contact-hero">
+        <h1>Let's Create Magic Together</h1>
+        <p>Have a vision? We're here to make it happen. Reach out through any of the channels below and let's start planning your perfect event.</p>
     </section>
-    <section class="features">
-        <div class="feature-card corporate-card">
-            <div class="feature-icon">🎉</div>
-            <h3>Corporate Events</h3>
-            <p>Professional conferences, team building activities, and corporate celebrations tailored to your brand.</p>
+
+    <div class="contact-container">
+        <div class="info-card">
+            <div class="info-card-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>123 Event Plaza, Downtown<br>Mysuru, Karnataka 570001<br>India</p>
         </div>
-        <div class="feature-card wedding-card">
-            <div class="feature-icon">💍</div>
-            <h3>Wedding</h3>
-            <p>Turn your special day into a fairy tale with our comprehensive wedding planning services.</p>
+
+        <div class="info-card">
+            <div class="info-card-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>
+                Phone: <a href="tel:+918212345678">+91 821 234 5678</a><br>
+                Mobile: <a href="tel:+919876543210">+91 98765 43210</a><br>
+                Mon - Sat: 9:00 AM - 7:00 PM
+            </p>
         </div>
-        <div class="feature-card social-card">
-            <div class="feature-icon">🎪</div>
-            <h3>Social Events</h3>
-            <p>Birthday parties, anniversaries, and celebrations that leave lasting memories.</p>
+
+        <div class="info-card">
+            <div class="info-card-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>
+                General: <a href="mailto:hello@eventify.com">hello@eventify.com</a><br>
+                Bookings: <a href="mailto:bookings@eventify.com">bookings@eventify.com</a><br>
+                Support: <a href="mailto:support@eventify.com">support@eventify.com</a>
+            </p>
         </div>
-        <div class="feature-card parties-card">
-            <div class="feature-icon">🎊</div>
-            <h3>Parties</h3>
-            <p>Every small event deserves a big story — let's make yours shine.</p>
+
+        <div class="info-card">
+            <div class="info-card-icon">🌐</div>
+            <h3>Follow Us</h3>
+            <p style="margin-bottom: 0.5rem;">Stay connected on social media</p>
+            <div class="social-links">
+                <span class="social-icon">📘</span>
+                <span class="social-icon">📸</span>
+                <span class="social-icon">🐦</span>
+                <span class="social-icon">💼</span>
+            </div>
         </div>
-    </section>
-    <section class="stats">
-        <div class="stat-item">
-            <h2>500+</h2>
-            <p>Events Organized</p>
-        </div>
-        <div class="stat-item">
-            <h2>1000+</h2>
-            <p>Happy Clients</p>
-        </div>
-        <div class="stat-item">
-            <h2>15+</h2>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-            <h2>95%</h2>
-            <p>Satisfaction Rate</p>
-        </div>
-    </section>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Memoroa. All rights reserved. Making moments memorable.</p>
+        <p>&copy; 2025 Eventify. All rights reserved. Making moments memorable.</p>
     </footer>
 </body>
 </html>
